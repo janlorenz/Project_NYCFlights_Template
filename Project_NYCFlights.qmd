@@ -1,0 +1,116 @@
+---
+title: "Our practice project"
+author: "YOUR NAME HERE"
+format:   
+  html: # Below are some YAML configurations:
+    embed-resources: true   # The html will have all figures embedded. 
+    number-sections: true
+---
+
+This Homework Project works with dataframes in the package `nycflights13` about flights, specifically a sample of domestic flights that departed from the three major New York City airports in 2013. 
+
+# Data overview
+
+## Package loading
+
+```{r}
+#| label: packages-data
+#| message: false  # We do not want to see the tidyverse loading flightgsmessage in our document
+#| echo: false
+library(tidyverse)
+library(patchwork)            # Install this package before. It helps to combine different plots.
+library(nycflights13)
+```
+
+## Package overview
+
+- The data package `nycflights13` package contains five tabular data frames. In total there is information about:
+  - `r nrow(airlines)` **airlines**
+  - `r nrow(airports)` **airports**
+  - `r nrow(planes)` **planes**
+  - `r nrow(flights)` **flights**
+
+
+The core dataframe `flights` has the following variables: 
+
+`year`, `month`, `day`: **Date** of departure.  
+`dep_time`, `arr_time`: Actual **departure** and **arrival** times (format HHMM or HMM), local time zone.  
+`sched_dep_time`, `sched_arr_time`: **Scheduled departure** and **arrival** times (format HHMM or HMM), local time zone.  
+`dep_delay`, `arr_delay`: **Departure** and **arrival delays**, in minutes. 
+Negative times represent early departures/arrivals.  
+`carrier`: Two letter **carrier** abbreviation. See `airlines`-dataframe to get the full name.  
+
+*Remove this text and continue the variable description.*
+
+# Basic data visualization
+
+```{r}
+#| label: flightsorigin
+ggplot(data = flights, mapping = aes(x = origin)) + 
+  geom_bar()
+```
+In the `flights` dataframe, the `EWR` variable has **120835** rows, the `JFK` has **111279** rows, and the LGA airport has **104662** rows, resulting in a total of **`r nrow(flights)`** flights
+
+```{r}
+#| label: flightsdistance
+# remove this line and put your solution
+```
+
+
+```{r}
+#| label: distributions
+g1 <- ggplot(data = planes, mapping = aes(y = seats, x = 0)) + 
+  geom_point()
+g2 <- ggplot(data = planes, mapping = aes(y = seats)) + 
+  geom_boxplot()
+g3 <- ggplot(data = flights, mapping = aes(y = distance)) +
+    geom_histogram(binwidth = 50)# Make your solution into this line
+g1 + g2 + g3
+```
+cool description
+
+```{r}
+#| label: engine-seats
+# remove this line and put your solution
+```
+
+
+```{r}
+#| label: delays
+# remove this line and put your solution
+```
+
+
+```{r}
+#| label: airportlocations
+# remove this line and put your solution
+```
+
+
+# Data Wrangling
+
+```{r}
+#| label: flightsaveragespeed
+# remove this line and put your solution
+```
+
+
+```{r}
+#| label: filtering
+# remove this line and put your solution
+```
+
+
+```{r}
+#| label: summarizing
+# remove this line and put your solution
+```
+
+# Data Audit
+
+```{r}
+#| label: strangeairportlocations
+# remove this line and put your solution
+```
+
+
