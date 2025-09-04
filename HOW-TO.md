@@ -20,7 +20,8 @@ sufficient.
 Needed software:
 
 - *Statistical Programming Language:* The instructions here are for
-  [R](https://cran.r-project.org/), you can also use python
+  [R](https://cran.r-project.org/), you can also use python but then you
+  have to adapt instructions and setup yourself.
 - *Version Control System:* [Git](https://git-scm.com/)
 - *Integrated Development Environments* (IDE): The instructor uses
   [positron](https://positron.posit.co/). All instructions here are
@@ -139,7 +140,9 @@ short summary:
     A dialog appears in the CONSOLE. Paste in your token and hit ENTER.
     Now your git installation can authenticate at GitHub and you can
     push your work to your repository on GitHub. Try it using the
-    workflow below.
+    workflow below. \[Note: If you wonder why you did not need to
+    install the `gitcreds` package, it is because it is already
+    installed as a dependency of the `usethis` package.\]
 
 ## Clone your repository and move into the workflow
 
